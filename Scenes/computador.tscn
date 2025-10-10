@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cowy6kj2t6wbl"]
+
+[ext_resource type="Texture2D" uid="uid://buv0i2t0xipvc" path="res://Images/windows.png" id="1_fxa6l"]
+[ext_resource type="Script" uid="uid://byu3823rku1km" path="res://scripts/Computer.gd" id="1_x8vny"]
+[ext_resource type="PackedScene" uid="uid://cx458qm61dpee" path="res://Scenes/knight.tscn" id="2_jfdb7"]
+[ext_resource type="Texture2D" uid="uid://c2ioperngs7up" path="res://Images/gmail.png" id="4_x7cou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxa6l"]
+size = Vector2(1223, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brotk"]
+size = Vector2(100, 71)
+
+[node name="Computador" type="Node2D"]
+script = ExtResource("1_x8vny")
+
+[node name="Windows" type="Sprite2D" parent="."]
+position = Vector2(597, 326)
+scale = Vector2(0.464844, 0.476389)
+texture = ExtResource("1_fxa6l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(597, 640)
+shape = SubResource("RectangleShape2D_fxa6l")
+
+[node name="Knight" parent="StaticBody2D" instance=ExtResource("2_jfdb7")]
+position = Vector2(-102, -8)
+
+[node name="Gmail" type="Sprite2D" parent="."]
+position = Vector2(1090, 455)
+scale = Vector2(0.311111, 0.305556)
+texture = ExtResource("4_x7cou")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1090, 453.5)
+shape = SubResource("RectangleShape2D_brotk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 537.0
+offset_top = 359.0
+offset_right = 577.0
+offset_bottom = 382.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
