@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://dy76k3p0ovbmo"]
 
+[ext_resource type="Texture2D" uid="uid://bw3rk2uds734a" path="res://Images/inbox.png" id="1_6b43q"]
 [ext_resource type="Script" uid="uid://m0u73ihio8s5" path="res://scripts/inbox.gd" id="1_6grod"]
-[ext_resource type="Texture2D" uid="uid://dvxsdixx2pxf7" path="res://Images/ChatGPT Image Oct 9, 2025, 06_18_00 PM.png" id="2_12wo4"]
 [ext_resource type="Texture2D" uid="uid://dk0s4po6bckre" path="res://Images/Monsters/PNG/jinn_animation/Flight1.png" id="2_thapd"]
 [ext_resource type="Texture2D" uid="uid://bac32na04jlag" path="res://Images/Monsters/PNG/jinn_animation/Flight2.png" id="3_12wo4"]
 [ext_resource type="Texture2D" uid="uid://cnvvupbvbdsj1" path="res://Images/Monsters/PNG/jinn_animation/Flight3.png" id="4_sbdyq"]
@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://ba4ya3fln8bla" path="res://Images/Monsters/PNG/jinn_animation/Idle1.png" id="18_cxb32"]
 [ext_resource type="Texture2D" uid="uid://tl3rqxattrhk" path="res://Images/Monsters/PNG/jinn_animation/Idle2.png" id="19_6b43q"]
 [ext_resource type="Texture2D" uid="uid://s7cknagsx272" path="res://Images/Monsters/PNG/jinn_animation/Idle3.png" id="20_dhiaq"]
+[ext_resource type="Texture2D" uid="uid://wgiaxo4cipuk" path="res://Images/ChatGPT Image Oct 9, 2025, 06_52_25 PM.png" id="22_dhiaq"]
 [ext_resource type="Texture2D" uid="uid://41vxvo47imo2" path="res://Images/YellowKnight.png" id="22_gi7o4"]
-[ext_resource type="Texture2D" uid="uid://cvykjgh7absye" path="res://Images/text.png" id="22_wkfm4"]
 [ext_resource type="FontFile" uid="uid://dlgaaa84a0faq" path="res://fonts/8bitOperatorPlus8-Regular.ttf" id="23_wkfm4"]
 [ext_resource type="Texture2D" uid="uid://btqj13hknjrvd" path="res://Images/Monsters/PNG/jinn_animation/Magic_Attack1.png" id="25_cxb32"]
 [ext_resource type="Texture2D" uid="uid://sgyma0l11dho" path="res://Images/Monsters/PNG/jinn_animation/Magic_Attack2.png" id="26_6b43q"]
@@ -177,17 +177,20 @@ animations = [{
 modulate = Color(0.493545, 0.493546, 0.493546, 1)
 position = Vector2(574, 357.5)
 scale = Vector2(0.789062, 0.745117)
-texture = ExtResource("2_12wo4")
 
 [node name="inbox" type="Sprite2D" parent="."]
-position = Vector2(576, 417)
-scale = Vector2(1.125, 0.859375)
+modulate = Color(0.3987929, 0.39879292, 0.3987929, 1)
+position = Vector2(661.99994, 417)
+scale = Vector2(1.0130209, 0.859375)
+texture = ExtResource("1_6b43q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(824, 167)
 scale = Vector2(4.3728, 3.79468)
 sprite_frames = SubResource("SpriteFrames_lph40")
-animation = &"Flight"
+animation = &"death"
+frame = 5
+frame_progress = 1.0
 flip_h = true
 
 [node name="YellowKnight" type="Sprite2D" parent="."]
@@ -196,15 +199,15 @@ scale = Vector2(0.455078, 0.417969)
 texture = ExtResource("22_gi7o4")
 
 [node name="text" type="Sprite2D" parent="."]
-position = Vector2(679, 545.5)
-scale = Vector2(1.30273, 0.297852)
-texture = ExtResource("22_wkfm4")
+position = Vector2(577.0011, 548)
+scale = Vector2(1.392576, 0.297852)
+texture = ExtResource("22_dhiaq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 81.9999
-offset_top = 468.5
-offset_right = 1057.0
-offset_bottom = 596.5
+offset_left = 82.0
+offset_top = 453.0
+offset_right = 1057.0001
+offset_bottom = 581.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("23_wkfm4")
 theme_override_font_sizes/normal_font_size = 50

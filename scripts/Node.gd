@@ -1,15 +1,19 @@
-extends RefCounted
+extends Node
 class_name Nodo
 
+var padre: Nodo = null
 var izquierda: Nodo = null
 var derecha: Nodo = null
+
 var dato:String
 var link:String
-func _init(dato:String, link:String) -> void:
+
+func _init(dato, link) -> void:
 	self.dato = dato
 	self.link = link
 	self.izquierda = null
 	self.derecha = null
+	self.padre = null
 
 func get_izquierda() -> Nodo:
 	return izquierda
